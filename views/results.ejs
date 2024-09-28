@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      h2 {
+        color: #000;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        background-color: #fff;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      a {
+        color: #175291;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* General styling for container */
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .content-section {
+        margin-bottom: 20px;
+      }
+
+      /* Academic papers section (if you want to style this as well) */
+      .academic-papers {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Search Results</h1>
+
+      <div class="content-section">
+        <h2>YouTube Videos</h2>
+        <ul>
+          <% youtube.forEach(video => { %>
+          <li>
+            <a href="<%= video.link %>"><%= video.title %></a>
+            (Views: <%= video.views %>, Likes: <%= video.likes %>)
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Articles</h2>
+        <ul>
+          <% articles.forEach(article => { %>
+          <li>
+            <a href="<%= article.link %>"><%= article.title %></a>
+            - <%= article.snippet %>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+
+      <div class="academic-papers">
+        <h2>Academic Papers</h2>
+        <ul>
+          <% papers.forEach(paper => { %>
+          <li><a href="<%= paper.link %>"><%= paper.title %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

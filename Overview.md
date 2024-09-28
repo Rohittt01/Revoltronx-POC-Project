@@ -1,0 +1,3 @@
+I built this Express.js app to streamline research by allowing users to search for YouTube videos, articles, and academic papers all in one place. I wanted to create a unified platform that simplifies accessing diverse resources for learning or research.
+
+To achieve this, I used EJS for templating to dynamically generate pages, Axios to handle API requests, and managed sensitive information like API keys through environment variables. The app integrates YouTube, Google Custom Search, and PubMed APIs, fetching results and sorting them based on criteria like views and likes for YouTube videos, before rendering them on a dedicated results page.
